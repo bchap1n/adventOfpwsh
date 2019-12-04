@@ -6,17 +6,24 @@ function get-FuelCounter-Upper {
         ValueFromPipeline=$true,
         Position=0)
         ]
-        [int[]]
-        $moduleMass
+        [decimal]$moduleMass
     )
     process {
-        foreach ($item in $moduleMass) {
-            ([System.Math]::Truncate( ($item / 3) ) - 2)            
-        }
-
+            $item = ([System.Math]::Truncate( ($moduleMass / 3) ) - 2) 
+            $toSum += $item
     }
+
+    End{
+        ($tosum | Measure-Object -sum).sum
+        
+
+        
+    }
+
     
 }
 
 Get-Content .\TyrannyOfTheRocket-input.txt | get-FuelCounter-Upper
 #100756 | get-FuelCounter-Upper
+
+
