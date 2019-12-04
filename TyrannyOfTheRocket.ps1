@@ -10,9 +10,10 @@ function get-FuelCounter-Upper {
         $moduleMass
     )
     process {
-        $foreach ($item in $moduleMass) {
-            ([System.Math]::Truncate( ($item / 3) ) - 2)
+        foreach ($item in $moduleMass) {
+            ([System.Math]::Truncate( ($item / 3) ) - 2)            
         }
+
     }
     
 }
