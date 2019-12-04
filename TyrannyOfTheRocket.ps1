@@ -8,22 +8,19 @@ function get-FuelCounter-Upper {
         ]
         [decimal]$moduleMass
     )
+    begin {$list = [System.Collections.Generic.List[int]]::new()}
     process {
-            $item = ([System.Math]::Truncate( ($moduleMass / 3) ) - 2) 
-            $toSum += $item
+            $fuelRequired = ([System.Math]::Truncate( ($moduleMass / 3) ) - 2)     
+            $list.Add("$fuelRequired") 
     }
 
     End{
-        ($tosum | Measure-Object -sum).sum
-        
-
-        
+        ($list | Measure-Object -sum).sum    
     }
-
-    
 }
 
 Get-Content .\TyrannyOfTheRocket-input.txt | get-FuelCounter-Upper
-#100756 | get-FuelCounter-Upper
+
+
 
 
