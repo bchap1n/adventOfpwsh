@@ -18,7 +18,7 @@ function get-FuelCounterUpper {
     }
 }
 
-Get-Content .\TyrannyOfTheRocket-input.txt | Get-FuelCounterUpper
+Get-Content .\01-TyrannyOfTheRocket-input.txt | Get-FuelCounterUpper
 
 
 

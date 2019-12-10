@@ -44,4 +44,4 @@ function Get-FuelCounterUpper2{
     }
 }
 
-Get-Content .\TyrannyOfTheRocket-input.txt | Get-FuelCounterUpper2
+Get-Content .\01-TyrannyOfTheRocket-input.txt | Get-FuelCounterUpper2
