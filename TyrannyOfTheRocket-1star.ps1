@@ -1,7 +1,6 @@
-function get-FuelCounter-Upper {
+function get-FuelCounterUpper {
     [CmdletBinding()]
     param (
-        # Parameter help description
         [Parameter(Mandatory=$true,
         ValueFromPipeline=$true,
         Position=0)
@@ -19,7 +18,7 @@ function get-FuelCounter-Upper {
     }
 }
 
-Get-Content .\TyrannyOfTheRocket-input.txt | get-FuelCounter-Upper
+Get-Content .\TyrannyOfTheRocket-input.txt | Get-FuelCounterUpper
 
 
 
